@@ -20,8 +20,14 @@ public class Main11OneToOne {
 //        adam.setWife(ewa);
         ewa.setHusband(adam);
 
-        session.persist(ewa);
+//        session.persist(ewa);
         session.persist(adam);
+
+        session.persist(new Husband("Witek", new Wife("Natalia")));
+        session.persist(new Husband("Hubert", new Wife("Ola")));
+        session.persist(new Husband("Jarek", new Wife("Kasia")));
+        session.persist(new Husband("Sławek", new Wife("Gosia")));
+        session.persist(new Husband("Janusz", new Wife("Grażyna")));
 
         transaction.commit();
         session.close();
