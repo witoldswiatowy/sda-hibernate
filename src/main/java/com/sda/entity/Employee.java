@@ -1,10 +1,17 @@
 package com.sda.entity;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name = "employee_table")
+@NoArgsConstructor
+@Getter
+@Setter
 public class Employee {
 
     @Id
@@ -24,6 +31,8 @@ public class Employee {
     Gender gender;
     @Lob
     String description;
+    @Embedded
+    Address address;
 
     public Employee(String name, String secret, String telephoneNumber, Long age, Date birthDate, Gender gender, String description) {
         this.name = name;
