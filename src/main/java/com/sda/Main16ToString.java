@@ -7,7 +7,6 @@ import org.hibernate.Transaction;
 
 public class Main16ToString {
     public static void main(String[] args) {
-
     SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
 
     Session session = sessionFactory.openSession();
