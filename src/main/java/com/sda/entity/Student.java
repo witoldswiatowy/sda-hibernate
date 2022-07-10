@@ -1,6 +1,7 @@
 package com.sda.entity;
 
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.engine.internal.Cascade;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import java.util.Set;
 @Entity
 @Table(name = "student")
 @NoArgsConstructor
+@ToString
 public class Student {
 
     @Id
@@ -17,11 +19,11 @@ public class Student {
     Long id;
     String name;
     @ManyToMany
-            @JoinTable( //tym możemy zmienić nazwę tabeli pośredniczącej, ale nie musimy tego robić
-                    name = "student_school_inna_nazwa",
-                    joinColumns = @JoinColumn(name = "student_id_2_inna_nazwa"),
-                    inverseJoinColumns = @JoinColumn(name = "school_id_2_inna_nazwa")
-            )
+    @JoinTable( //tym możemy zmienić nazwę tabeli pośredniczącej, ale nie musimy tego robić
+            name = "student_school_inna_nazwa",
+            joinColumns = @JoinColumn(name = "student_id_2_inna_nazwa"),
+            inverseJoinColumns = @JoinColumn(name = "school_id_2_inna_nazwa")
+    )
     Set<School> schools = new HashSet<>();
 
     public Student(String name) {

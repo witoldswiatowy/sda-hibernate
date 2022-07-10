@@ -1,5 +1,6 @@
 package com.sda.entity;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -8,6 +9,7 @@ import java.util.Set;
 @Entity
 @Table(name = "school")
 @NoArgsConstructor
+@ToString(exclude = "students")
 public class School {
 
     @Id
