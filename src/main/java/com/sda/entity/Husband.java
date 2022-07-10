@@ -17,7 +17,7 @@ public class Husband {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long Id;
     String name;
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, orphanRemoval = true)
     Wife wife;
 
     public Husband(String name) {
