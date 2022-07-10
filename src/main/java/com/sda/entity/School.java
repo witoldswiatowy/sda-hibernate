@@ -21,7 +21,7 @@ public class School {
     String name;
     @ManyToMany(mappedBy = "schools",
             cascade = CascadeType.PERSIST,   //a ten "cascade = ..." może być tu lub tu, albo i tu i tu, tylko wtedy pilnujemy na czym robimy persist
-            fetch = FetchType.EAGER)
+            fetch = FetchType.EAGER) //chyba pobiera informacja przez mniejszą ilość zapytan do SQL
 
     Set<Student> students = new HashSet<>();
 
