@@ -18,5 +18,7 @@
         <mapping class="com.sda.entity.Husband"/>
         <mapping class="com.sda.entity.Client"/>
         <mapping class="com.sda.entity.Book"/>
+        <mapping class="com.sda.entity.Student"/>
+        <mapping class="com.sda.entity.School"/>
     </session-factory>
 </hibernate-configuration>
