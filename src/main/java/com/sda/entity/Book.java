@@ -2,6 +2,7 @@ package com.sda.entity;
 
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -11,6 +12,7 @@ import java.util.Set;
 @Table(name = "book")
 @NoArgsConstructor
 @Setter
+@ToString(exclude = "client")
 public class Book {
 
     @Id
